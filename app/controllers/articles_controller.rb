@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  # basic auth
+  http_basic_authenticate_with name: "matbot", password: "matbot", except: [:index, :show]
+
   # index
   def index
     @articles = Article.all
